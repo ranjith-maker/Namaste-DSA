@@ -73,17 +73,17 @@ if(arr[small] > arr[j]){
 return arr
 }
 
-let res = sor([10,1,3,9,5]);
-console.log(res);
-[ 1, 3, 5, 9, 10 ]
+// let res = sor([10,1,3,9,5]);
+// console.log(res);
+// [ 1, 3, 5, 9, 10 ]
 
 
 
 
 
 
-Bubble Sort Order
-Arrange it in Ascending Order
+// Bubble Sort Order
+// Arrange it in Ascending Order
 Input = [10,5,18,4,2]
 Output = [2,4,5,10,18]
 
@@ -342,3 +342,22 @@ console.log(res);
 // Infinite loop.
 // Same pair repeated forever.
 
+// // Best time to Buy and sell
+// function stock(arr) {
+ 
+//     let curMin = arr[0]
+//     let curMax = 0;
+
+//     for(let i = 1; i < arr.length; i++){
+
+// curMin = Math.min(arr[i], curMin)
+// curMax = Math.max(curMax, arr[i] - curMin ) 
+//     }
+
+// return  curMax
+
+
+// }
+
+// let res = stock([7,1,5,3,6,4])
+// console.log(res); //---> 5
