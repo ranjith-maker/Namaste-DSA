@@ -361,3 +361,81 @@ console.log(res);
 
 // let res = stock([7,1,5,3,6,4])
 // console.log(res); //---> 5
+
+
+
+
+
+//Lecture 15 Binary Search Problems
+//  Sqrt(x)
+// Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+// You must not use any built-in exponent function or operator.
+// For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
+
+// Example 1:
+// Input: x = 4 Output: 2
+// Explanation: The square root of 4 is 2, so we return 2.
+//we don't need an exact ans but we need an nearest answer
+
+
+
+// function sqrt(x) {
+//  let answer = 0;
+// for(let i = 1; i * i <= x; i++){
+//     answer = i
+// }   
+// return answer
+// }
+// console.log(sqrt(50)); 
+// ---> 7
+
+// now when the x is high like 500 it still starts from the 1 2 3 4 5 6 7.... it'll be hughge time waste
+// since it is sorted, we can try Binary search here instead of linear way
+
+// function sqrt(x) {
+
+// let start = 1; let end = x 
+// let ans;
+
+// while( start <= end){
+
+//     let mid = Math.floor(start + ( end - start) / 2 )
+// if( mid * mid === x ){
+//     return mid
+// } else if( mid * mid < x ){
+//     ans  = mid;
+//     start = mid + 1
+// } else{
+//     end = mid - 1
+// }
+
+// }
+// return ans
+// }
+// console.log(sqrt(50));  7
+
+// this is a optimised approach as multiplying 2 numbers will only increase the time
+// function sqrt(x) {
+
+// let start = 1; let end = x 
+// let ans;
+
+// while( start <= end){
+
+//     let mid = Math.floor(start + ( end - start) / 2 )
+// if( mid === x/mid ){
+//     return mid
+// } else if( mid < x / mid ){
+//     ans  = mid;
+//     start = mid + 1
+// } else{
+//     end = mid - 1
+// }}
+// return ans
+// }
+// console.log(sqrt(50)); 7
+
+
+
+
+
