@@ -438,4 +438,63 @@ console.log(res);
 
 
 
+// 2D Array
+// N – rows , M – Columns 
+// both goes to 0 to n-1 and 0 to m-1
+
+// let grid = [  [1,2,3] ,  [4,5,6], [7,8,9]   ]
+
+// Print only 0th row 
+
+//  let grid = [ 
+//   [1,2,3] , 
+//   [4,5,6],
+//   [7,8,9] 
+//   ]
+// console.log(grid[0]); --->  [1,2,3] 
+
+// Print 0th column
+
+// for(let i = 0; i < grid.length; i++){
+// console.log( grid[i][0]  ); 
+
+// }
+// 1
+// 4
+// 7
+
+//Print only rows
+//  let grid = [ 
+//   [1,2,3] , 
+//   [4,5,6],
+//   [7,8,9] 
+//   ]
+// let n = grid.length;
+
+// for(let i  = 0; i < n; i++){
+// let row = " "
+//     for(let j = 0; j < n; j++){
+// row += grid[i][j]+" "
+
+//     }
+//     console.log(row);  
+// }
+//  1 2 3 
+//  4 5 6 
+//  7 8 9 
+
+
+//   Print column 
+// for(let i = 0; i<grid.length; i++){
+//     let row =""
+//     for(let j = 0; j< grid.length; j++){
+// row +=grid[j][i] + " " 
+//     }
+// console.log(row);
+
+// }
+// 1 4 7 
+// 2 5 8 
+// 3 6 9 
+
 
