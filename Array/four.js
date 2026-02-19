@@ -498,3 +498,107 @@ console.log(res);
 // 3 6 9 
 
 
+
+
+// function rwsm(arr) {
+
+//     let row = arr.length;
+
+
+//  for(let i = 0; i < row; i++){
+
+// let sum = 0;
+// let cols = arr[i].length
+// for(let j = 0; j < cols; j++){
+
+//     sum += arr[i][j]
+// }    
+// console.log(sum);
+//  }   }
+
+
+// let res = rwsm([
+
+// [10,2,3],
+// [5,6,1],
+// [4,0],
+
+// ] )
+
+// 15
+// 12
+// 4
+
+// when printing row sum, keep the column length as arr[i].length, first's length we know that when we print row we keep the row loop as first, and when in column cols as first loop
+// let cols = arr[i].length; ---> actual length of each row 
+
+
+// function colsm(arr) {
+
+// let cols = arr.length;
+
+
+// for(  let j = 0; j < cols; j++ ){
+
+// let sum = 0;
+// let row = arr[j].length; 
+
+// for(let i = 0; i < row; i++){
+
+// sum += arr[i][j]
+
+// }
+// console.log(sum);
+
+// }}
+
+// let res = colsm([
+
+// [10,2,3],
+// [0,6,1],
+// [1,0],
+
+// ] )
+
+
+// 11
+// 8
+// 4
+
+
+// when printing col sum, keep the rowlength as arr[j].length, first's length as we know that when we print colsum we keep the col loop as first, and when in rowsm row as first loop
+
+
+
+
+// function rwsm(arr) {
+//     arr.forEach(row => {
+//         console.log(row.reduce((a, b) => a + b, 0));
+//     });
+// }
+// let res = rwsm([
+
+// [10,2,3],
+// [5,6,1],
+// [4,0],
+
+// ] )
+// 15
+// 12
+// 4
+
+
+// function columnSum(arr) {
+//     return arr[0].map((_, colIndex) =>
+//         arr.reduce((sum, row) => sum + row[colIndex], 0)
+//     );
+// }
+
+// let result = columnSum([
+//     [10, 2, 3],
+//     [5, 6, 1],
+//     [4, 0, 2]
+// ]);
+
+// console.log(result); // [19, 8, 6]
+
