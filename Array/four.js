@@ -602,3 +602,380 @@ console.log(res);
 
 // console.log(result); // [19, 8, 6]
 
+// Searching and Sorting Class I 
+
+// function fin(arr,target) {
+//     let n = arr.length;
+// let start = 0;
+// let end = n-1;
+
+// while( start <= end){
+// let mid = Math.floor(start + (end - start) / 2)
+
+// if( arr[mid] === target){
+//     return mid
+// } else if( arr[mid] < target){
+// start = mid + 1;
+// }else {
+//     end = mid - 1
+// }}
+// return mid
+// }
+
+
+// let res = fin([1,2,3,4,5,7,89,],7)
+// console.log(res);
+
+
+
+// Find the first occurence of element in the arraty
+
+
+// function firstoccur(arr,target) {
+  
+//        let n = arr.length;
+// let start = 0;
+// let end = n-1;
+// let ans = -1;
+
+// while( start <= end){
+// let mid = Math.floor(start + (end - start) / 2)
+
+
+// if(arr[mid] === target ){
+//     ans = mid;
+//     end = mid - 1;
+// }else if( arr[mid] < target){
+//     start = mid + 1;
+// } else{
+//     end = mid - 1
+// }}
+
+// return ans
+
+// }
+
+// let res = firstoccur([1,3,3,3,3,3,3,4,4,4,4,5,6,10],4)
+// console.log(res); //---> 7
+
+// Find the last occurence in the array
+
+
+// function firstoccur(arr,target) {
+  
+//        let n = arr.length;
+// let start = 0;
+// let end = n-1;
+// let ans = -1;
+
+// while( start <= end){
+// let mid = Math.floor(start + (end - start) / 2)
+
+
+// if(arr[mid] === target ){
+//     ans = mid;
+//     start = mid + 1
+// }else if( arr[mid] < target){
+//     start = mid + 1;
+// } else{
+//     end = mid - 1
+// }}
+
+// return ans
+
+// }
+
+// let res = firstoccur([1,3,4,4,4,4,5,6,10],4)
+// console.log(res);   ---> 5
+
+// if(arr[mid] === target ){
+//     ans = mid;
+//     start = mid - 1;
+// }
+
+// why we write this in the start mid - 1 in mid = target in this condition, usually we write this only when the target is in the left starting side of the array
+// since we want the first index of the target we're checking , we are writing go left
+
+// We are NOT saying:
+
+// “Target is definitely on the left.”
+
+// We are saying:
+
+// “I found one target, but maybe there is an earlier one on the left.”
+
+// That is the difference.
+
+// 📌 Why We Move Left When Equal?
+
+// Because we want the first occurrence.
+
+// Example:
+
+// [1, 3, 4, 4, 4, 4, 5, 6]
+
+// Suppose mid lands at index 4.
+
+// index: 0 1 2 3 4 5 6 7
+// value: 1 3 4 4 4 4 5 6
+//                 ^
+//                mid
+
+// We found 4.
+
+// But is this the FIRST 4? ❌ No.
+
+// So we:
+
+// Save it → ans = mid
+
+// Move left → end = mid - 1
+
+// To check if an earlier 4 exists.
+
+// ⚠ Why NOT Put It Only in else?
+
+// Normal binary search:
+
+// else {
+//    end = mid - 1;
+// }
+
+// This runs only when:
+
+// arr[mid] > target
+
+// That means:
+
+// Target is definitely on the left.
+
+// But when:
+
+// arr[mid] === target
+
+// We are not searching for target anymore —
+// we are searching for an earlier occurrence.
+
+// So we manually move left again.
+
+
+// function countOccurrences(arr, target) {
+//     let n = arr.length;
+//     let start = 0;
+//     let end = n - 1;
+//     let first = -1;
+//     let last = -1;
+
+//     // Find first occurrence
+//     while (start <= end) {
+//         let mid = Math.floor((start + end) / 2);
+
+//         if (arr[mid] === target) {
+//             first = mid;
+//             end = mid - 1;   // move left
+//         } 
+//         else if (arr[mid] < target) {
+//             start = mid + 1;
+//         } 
+//         else {
+//             end = mid - 1;
+//         }
+//     }
+
+//     if (first === -1) return 0; // not present
+
+//     // Reset pointers to find last occurrence
+//     start = first;
+//     end = n - 1;
+
+//     while (start <= end) {
+//         let mid = Math.floor((start + end) / 2);
+
+//         if (arr[mid] === target) {
+//             last = mid;
+//             start = mid + 1;  // move right
+//         } 
+//         else if (arr[mid] < target) {
+//             start = mid + 1;
+//         } 
+//         else {
+//             end = mid - 1;
+//         }
+//     }
+
+//     return last - first + 1;
+// }
+
+// console.log(countOccurrences([1,3,4,4,4,4,5,6,10], 4)); // 4
+
+
+// count the element in BInary search 
+// if we are counting in binary search, we need to find out the first and last occurences of the element so that it is quite simple to find the total occurences , using binary we can reducethe time complexity, O(log n)
+
+
+// function countoccur(arr,target){
+
+// let n = arr.length;
+// let start = 0; let end = n - 1; 
+
+// let idxone = -1; let idxtwo = -1;
+
+// while(start <= end){
+
+//    let mid = Math.floor(start + (end - start) / 2)
+
+// if(arr[mid] === target ){
+//     idxone = mid;
+//     end = mid - 1
+// }else if( arr[mid] < target){
+//     start = mid + 1;
+// }else{
+//     end = mid - 1; 
+// }}
+
+// if(idxone === -1) return 0
+// n = arr.length;
+// start = 0; end = n-1;
+
+// while(start <= end){
+    
+//     let mid = Math.floor(start + (end - start) / 2)
+
+// if( arr[mid] === target){
+// idxtwo = mid;
+// start = mid + 1;
+
+// }else if( arr[mid] < target){
+// start = mid +1;
+// }else {
+//     end = mid - 1 
+// }}
+
+// return (idxtwo - idxone) + 1
+
+// }
+
+// let res = countoccur([1,3,4,4,4,4,4,5,6,10], 7)
+// console.log(res); 0
+
+
+// function missingBinary(arr) {
+//     let start = 0;
+//     let end = arr.length - 1;
+
+// while( start <= end ){
+// let mid = Math.floor(start + (end - start) / 2)
+//     if(arr[mid] === mid + 1){
+//         start = mid + 1;
+//     }else{
+// end = mid - 1
+//     }
+// }
+// return start + 1
+
+// }
+
+// console.log(missingBinary([1,2,3,4,5,6,8])); // 7
+
+
+
+
+
+
+
+
+
+// 4️⃣ Why mid and mid + 1 Can Be “Different”
+
+// They aren’t the same value; it’s a logical comparison:
+
+// In a perfect array, arr[mid] should equal mid + 1
+
+// If there’s a missing number, arr[mid] > mid + 1
+
+// Example:
+
+// mid = 3
+// arr[mid] = 5
+// mid + 1 = 4
+
+// ✅ 5 ≠ 4 → missing number is 4.
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function fnlidx(arr,target) {
+ 
+//     let n = arr.length;
+//     let start = 0; let end = n-1;
+
+//  let idxtwo = -1; 
+//  let idxone = -1; 
+// while( start <= end){
+
+// let mid = Math.floor(start + (end - start ) / 2 )
+
+// if( arr[mid] === target){
+//  idxone = mid
+//  end = mid - 1;
+
+// } else if( arr[mid] < target){
+//     start = mid + 1;
+// }else{
+// end = mid - 1;
+
+// }}
+
+//  n = arr.length;
+//  start = 0;  end = n-1
+
+//  while( start <= end){
+
+//     let mid = Math.floor( start + (end - start) / 2  )
+
+// if(arr[mid] === target){
+// idxtwo = mid
+// start = mid + 1;
+
+// } else if(arr[mid] < target ){
+//        start = mid + 1;
+// } else{
+// end = mid - 1; 
+// } }
+//  return idxtwo -idxone +1 
+// }
+
+// let res = fnlidx([5,7,7,8,8,8,10],8)
+// console.log(res);
+
+
+
+// function peakidx(arr) {
+//     let n = arr.length;
+// let start = 0; let end = n-1    
+
+// while( start < end   ){
+
+// let mid = Math.floor(start + ( end - start) / 2)
+
+// if(arr[mid] < arr[mid + 1] ){
+//     start = mid + 1
+// }else{
+//     end = mid
+
+// }}
+// return end
+// }
+// let res = peakidx(  [3,7,10,14,17,19,20,22,14] )
+// console.log(res);  //---> 6
+
+    
