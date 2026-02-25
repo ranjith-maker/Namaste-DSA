@@ -414,3 +414,193 @@
 // console.log(res);  3
  
 
+
+// Lower Bound in BS
+// It means we need to find the arr[i] >= x
+// find the mid which is higher than or equal to the x 
+// for ex - [3,5,8,15,19] , if x = 8 ,  it is 8 , why bcoz only 8 is greter than or equal to 8 
+// if x = 16, ans is 19 , why only 19 is greater than or equal to 16.
+
+
+// An Algo for lower bound is the mid should be higher than or equal to the target
+
+// function lobo(arr,target) {
+
+// let n = arr.length;    
+// let start = 0; let end = n-1
+
+// let ans = n
+// while( start <= end ){
+
+//     let mid = Math.floor(start + (end - start) / 2)
+// if( arr[mid] >= target){
+//     ans = mid
+//     end = mid - 1
+// } else  {
+// start = mid + 1;
+
+// }}
+// return ans
+// }
+
+// // let res = lobo( [3,5,8,15,11,11,11,11,11,19,20],11 ) //---> 4
+// let res = lobo( [3,5,8,10,11,11,11,11,11,19,20],2) //---> 9 
+
+// console.log(res); 
+
+
+// An Algo for Upper bound is , it has to be higher than the target
+
+
+// function higbo(arr,target) {
+    
+//     let n = arr.length;
+//     let start = 0; let end = n-1
+// let ans = n;
+// while( start <= end ){
+//      let mid = Math.floor(start + (end - start) / 2 )
+      
+// if(arr[mid] > target){
+//    ans = mid;
+//    end = mid - 1
+// }else{
+// start = mid + 1
+// }}
+// return ans
+// }
+//  let res = higbo( [3,5,8,15,11,11,11,11,11,19,20],11 ) 9
+// let res = higbo( [1,2,3,5,8,10,11,11,13,14,15,19,20],11 )  8
+// console.log(res);
+
+// So lower bound's logic is the mid should always be greater than or equal to the target
+// whereas highere bound's logic is the mid shoould br higher than the target
+
+
+//Search a place INserrt
+
+// function serins(arr,target) {
+  
+// let n = arr.length
+// let start = 0; let end = n-1;
+// let ans = n;
+// while( start <= end ){
+//      let mid = Math.floor(start+ (end - start) / 2)
+// if ( arr[mid]  >= target ){
+//     ans = mid
+//     end = mid - 1
+// }else{
+//     start = mid + 1 
+// }}
+// return ans
+// }
+
+
+// let res = serins( [3,5,8,10,11,11,11,11,11,19,20],4) //---> 1
+
+// console.log(res); 
+
+
+// // Just Assume left and right is sorted  and also think that both are independent, it'll be amazing
+// function searchrot(arr,target) {
+
+//     let n = arr.length;
+//     let start = 0; let end = n -1
+
+// while(start <= end){
+
+// let mid = Math.floor(start + (end - start) / 2) 
+
+// if ( arr[mid]  === target ) return mid
+
+// if( arr[start] < arr[mid] )
+// if( arr[start] < target && target < arr[mid]){
+//     end = mid - 1;
+// }else{
+//     start = mid + 1
+// }
+// else {
+// if( arr[mid] < target && target < arr[end]){
+//     start = mid + 1;
+// }else{
+//     end = mid - 1 
+// }
+
+
+// }}
+// return -1
+// }
+// let res = searchrot([40,50,60,70,80,10,20,30],10) 
+// console.log(res);
+// // ----> 5 as the index of target(10) is at 5
+
+
+
+
+
+// This is the version where we can easily understand every line 
+
+// function rotfinmin(arr) {
+
+//     let  n = arr.length;
+//     let start = 0; let end = n-1;
+
+//     while( start <= end ){
+    
+//          let mid = Math.floor(start + (end - start) / 2 )
+
+//     if( arr[start] <= arr[end] )return start  
+
+//     let prev = (mid - 1 + n) % n
+//     let next = (mid + 1 ) % n 
+    
+//     if(arr[prev] > arr[mid] && arr[mid] < arr[next]  ){
+//         return mid
+//     }else if ( arr[mid] >= arr[start] ){
+//         start = mid + 1
+//     }else{
+//         end = mid + 1
+//     }}}
+
+// let res = rotfinmin([4,5,6,7,1,2,3])
+// console.log(res); 4
+
+
+
+
+
+// function rotfinmin(arr) {
+//     let n = arr.length;
+
+//     let start = 0;
+//     let end = n - 1;
+
+//     while (start <= end) {
+
+//         // If already sorted
+//         if (arr[start] <= arr[end]) {
+//             return arr[start];
+//         }
+
+//         let mid = Math.floor(start + (end - start) / 2);
+
+//         let prev = (mid - 1 + n) % n;
+//         let next = (mid + 1) % n;
+
+//         // Check if mid is minimum
+//         if (arr[mid] <= arr[prev] && arr[mid] <= arr[next]) {
+//             return arr[mid];
+//         }
+//         // Left half sorted → go right
+//         else if (arr[mid] >= arr[start]) {
+//             start = mid + 1;
+//         }
+//         // Right half sorted → go left
+//         else {
+//             end = mid - 1;
+//         }
+//     }
+// }
+
+// let res = rotfinmin([7,6,5,4,1,2,3]);
+// console.log(res); 1
+
