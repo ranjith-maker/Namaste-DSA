@@ -979,3 +979,29 @@ console.log(res);
 // console.log(res);  //---> 6
 
     
+// O(n) approach using HashMap
+// function findPairsHashMap(arr, k) {
+//     if (k < 0) return 0;
+
+//     const map = new Map();
+
+//     // count occurrences
+//     for (const num of arr) {
+//         map.set(num, (map.get(num) || 0) + 1);
+//     }
+
+//     let count = 0;
+
+//     for (const [num, freq] of map.entries()) {
+//         if (k > 0 && map.has(num + k)) {
+//             count++;
+//         } else if (k === 0 && freq > 1) {
+//             count++;
+//         }
+//     }
+
+//     return count;
+// }
+
+// // Example
+// console.log(findPairsHashMap([1,1,1,1,1], 2)); //0

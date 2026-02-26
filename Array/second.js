@@ -210,34 +210,34 @@
 
 //SUm of Unique elements
 
-function uniq(arr) {
-    let sum = 0;
+// function uniq(arr) {
+//     let sum = 0;
 
-    for (let i = 0; i < arr.length; i++) {
+//     for (let i = 0; i < arr.length; i++) {
 
-        let found = false;
+//         let found = false;
 
-        for (let j = 0; j < arr.length; j++) {
+//         for (let j = 0; j < arr.length; j++) {
 
-            if (i === j) {
-                continue;   // skip same index
-            }
-            else if (arr[i] === arr[j]) {
-                found = true;   // duplicate caught
-                break;
-            }
-        }
+//             if (i === j) {
+//                 continue;   // skip same index
+//             }
+//             else if (arr[i] === arr[j]) {
+//                 found = true;   // duplicate caught
+//                 break;
+//             }
+//         }
 
-        if (found === false) {
-            sum += arr[i];
-        }
-    }
+//         if (found === false) {
+//             sum += arr[i];
+//         }
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
 
-let res = uniq([10,20,30,20,20,20,30,40]);
-// console.log(res);
+// let res = uniq([10,20,30,20,20,20,30,40]);
+// // console.log(res);
 
 
 
@@ -289,32 +289,32 @@ let res = uniq([10,20,30,20,20,20,30,40]);
 
 
 
-function sumOfUnique(arr) {
+// function sumOfUnique(arr) {
 
-    let freq ={};
+//     let freq ={};
 
-    for(let i = 0; i<arr.length; i++){
-        const num = arr[i]
-    if(freq[num]){
-        freq[num] += 1;
-    } 
-    else{
-        freq[num] = 1
-    }
-    }
+//     for(let i = 0; i<arr.length; i++){
+//         const num = arr[i]
+//     if(freq[num]){
+//         freq[num] += 1;
+//     } 
+//     else{
+//         freq[num] = 1
+//     }
+//     }
 
-let sum = 0 ;
-for(let key in freq){
-    if(freq[key] === 1){
-       sum += Number(key)
-    }
-}
+// let sum = 0 ;
+// for(let key in freq){
+//     if(freq[key] === 1){
+//        sum += Number(key)
+//     }
+// }
 
-return sum
+// return sum
 
-}
+// }
 
-console.log(sumOfUnique([1, 2, 3, 2])); ---> 4
+// console.log(sumOfUnique([1, 2, 3, 2])); ---> 4
 
 
 
