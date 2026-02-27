@@ -199,16 +199,6 @@ for (let i = 1; i <= n; i++) {
 
 
 
-// [ start →        ← end ]
-// Keep moving inward until they cross.
-
-
-
-
-
-
-
-
 // function ext(arr) {
 
 //     let n = arr.length - 1
