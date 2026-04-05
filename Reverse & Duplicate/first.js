@@ -266,17 +266,134 @@
 
 // Is this what we say sum of 10 natural numbers
 
-let row = "";
-for(let i = 1; i<=5; i++){
- row += i 
+// let row = "";
+// for(let i = 1; i<=5; i++){
+//  row += i 
 
-}
+// }
 
-console.log(row);
-
-
+// console.log(row);
 
 
+
+
+
+
+// Lower Bound in Binary Search
+
+// The x should be a smallest index such that arr[i] >= x, lets say the array is [2,5,6,8,12,15] x is 7
+// the ans is 3 ,there by the index of the 3 is 8.
+// x should be either equal to or higher for lower bound
+// if array is [2,5,6,8,12,15,15,15,15] the x is 15, 
+// the ans is 5 , either equal to or higher index also the smallest index it means both equal to too
+
+// The x should be arr[i] >= x
+
+// function lbond(arr,x) {
+
+// let n = arr.length;    
+// let start = 0;
+// let end = n-1
+
+// let ans = n
+// while(start <= end){
+
+// let mid = Math.floor(start + (end - start) / 2)
+
+// if(arr[mid] >= x){
+// ans = mid
+// end = mid - 1
+// }else{
+//     start = mid +1
+// }}
+// return ans
+// }
+// let res = lbond([8,10,51,56,65,78,100],70 )
+// console.log(res); - 5
+
+// if(arr[mid] >= x){} since lb is about finding the smallest higher or equal to the x, since if mid is higher we go to left , end = mid-1
+
+
+// Upper Bound 
+
+// Upper bound is finding higher than the index , arr[i] > x 
+
+// function uppbond(arr,x) {
+
+// let n = arr.length;    
+// let start = 0; let end = n-1; 
+
+// let ans = n
+// while(start <= end){
+
+//     let mid = Math.floor(start + (end-start) / 2 )
+
+//  if(arr[mid] > x ){
+// ans = mid
+// end = mid - 1 
+// }else{
+//     start = mid +1
+// } }
+// return ans
+// }
+// let res = uppbond([8,10,51,56,65,78,100],11 )
+// console.log(res); ---> 2
+
+// Search insertion index
+
+// Search insertion index is exactly like a lower bound ,find in which index the x can be inserted , sounds like lower bound, why?
+// here, [12,25,36,48,60] if the x is 30, tell me inwhich index will it be inserted ?,2nd index after 25 OK right, now what LB is telling 
+// arr[i] >= x , tahts why it is connected
+// You can see the lower bound code for example
+
+// Floor value = arr[i] <= x , array value is lesser than or equal to x, here we're finding the value itself not index thats why floor  VALUE
+
+// function flr(arr,x) {
+    
+// let n = arr.length;    
+// let start = 0; let end = n-1; 
+
+// let ans = -1
+// while(start <= end){
+
+//     let mid = Math.floor(start + (end-start) / 2 )
+// if(arr[mid] <= x ){
+//     ans = arr[mid]
+//     start = mid + 1
+// }else{
+//     end = mid - 1
+// }}
+
+// return ans
+// }
+
+// let res = flr([5,6,7,10,12,15,19], 4)
+// console.log(res); //12
+
+
+// Ceil value, arr[i] >= x , the value must be higher than or equal to x , just like Lowerbound , Search  insertion index
+
+// function ceil(arr,x) {
+    
+// let n = arr.length;    
+// let start = 0; let end = n-1; 
+
+// let ans = -1
+// while(start <= end){
+
+// let mid = Math.floor(start + (end-start) /2 )
+
+// if(arr[mid] >= x ){
+//         ans = arr[mid]
+//         end = mid -1
+// }else{
+//         start = mid +1
+// }}
+// return ans
+// }
+
+// let res = ceil([5,6,7,10,12,15,19], 8)
+// console.log(res); // 10
 
 
 
