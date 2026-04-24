@@ -336,31 +336,106 @@
 // -45
 // There is no Negative number in the array
 
+//hashmap
+
+
+
+// function firrep(arr) {
+
+// let freq= {};
+
+// for(let i = 0; i < arr.length; i++){
+
+// const num = arr[i]
+
+// if( freq[num]  ){
+
+// freq[num] += 1
+
+// } else {
+//     freq[num] = 1
+// }}
+
+// for(let i = 0; i < arr.length; i++){
+
+// if(freq[arr[i]] > 1 ){
+
+// return i + 1
+
+// }}
+// return - 1
+// }
+
+// let res = firrep([1, 5, 4, 3, 5, 3, 2])
+// console.log(res);  2
+
+
+// function firrep(arr) {
+ 
+//   let freq = new Map()
+//   for(let num of arr){
+
+//   freq.set(num,   (freq.get(num) || 0) +  1  )
+//   }       
+
+// for(let i of arr){
+
+// if(freq.get(arr[i]) > 1){
+// return i + 1
+
+// }}
+// return -1
+// }
+// let res = firrep([1, 5, 4, 5, 10, 2,2])
+// console.log(res);    2
+// Map(5) { 1 => 1, 5 => 2, 4 => 1, 10 => 1, 2 => 2 } 
+// Non repeatable elements  
+// function fifrep(arr) {
+
+//   let freq = new Map()
+
+// for(let num of arr){
+
+//   freq.set(num,   (freq.get(num) || 0 ) + 1 )
+
+// }
+
+// let result = []
+// for(let i of arr){
+// if(freq.get(i) === 1 ){
+//   result.push(i)
+// }}
+
+// return result
+
+// }
+
+// let res = fifrep([1, 5, 4, 5, 10, 2,2])
+// console.log(res);  
+// [ 1, 4, 10 ]
 
 
 
 
+// Adding only unique numbers
 
+// function adUniq(arr) {
 
+//   let freq = new Map()
 
+// for(let num of arr){
+//   freq.set(num,   (freq.get(num) || 0 ) + 1 )
+// }
+// let ans = 0;
+// for(let i of arr){
 
+// if(freq.get(i) === 1 ){
+//   ans += i
+// }}
+// return ans
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// let res = adUniq([1, 5, 4, 5, 10, 2,2])
+// console.log(res); //15 
 
 
