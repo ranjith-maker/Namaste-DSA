@@ -536,7 +536,6 @@
 
 
 
-
 // This is the version where we can easily understand every line 
 
 // function rotfinmin(arr) {
@@ -603,4 +602,94 @@
 
 // let res = rotfinmin([7,6,5,4,1,2,3]);
 // console.log(res); 1
+
+
+
+
+//Find a minimum in Rotated Sorted array
+
+// function rotMin(arr) {
+
+// let n = arr.length;
+// let start = 0; let end = n-1;
+// let ans = Infinity
+
+// while( start <= end ){
+
+// let mid = Math.floor(start + (end - start) /2)
+// //when you go to the left half, you take the minimum from it, and eliminate it , go to the other side , 
+// if(arr[start]  <= arr[mid] ){
+// ans = Math.min(ans, (arr[start]))
+// start = mid + 1
+
+// }else {
+
+// end = mid - 1  
+// ans =  Math.min(ans, arr[mid])
+// }}
+// return ans
+// }
+
+
+// let res = rotMin([4,5,1,2,3])
+// console.log(res);
+
+/*
+[4,5,6,7,0,1,2], first see which half is sorted, which is not, right is sorted , left is not sorted, ans where do you see the minimum lies in this arr ? right half. which is unsorted half, so can I say my minimum'll always be at the unsorted arr ?. lets see another ex- [7,8,1,2,3,4,5,6], now right half is sorted adn left is unsorted also 1 is in inthe unsorted half only,
+[4,5,1,2,3]  - now right is sorted , contains the minimum, left is undsorted also contains the minimum, amll bit of conflict comes here, so I cant si,ply say I can find my minimum in unsorted half here both has. so a sorted may or may not have the ans .
+//when you go to the left half, you take the minimum from it, and eliminate it , go to the other side thats why start = mid+1 , 
+if(arr[start]  <= arr[mid] ){
+ans = Math.min(ans, (arr[start])) 
+start = mid + 1
+why Math.min , we want to compare minimum to the minimium in the half, in the left half the minimum 'll always be the arr[start] only and in the right the smallest'll always be mid only
+ans is Infinity , 0 so ans is 0 updated on the go....
+*/
+
+
+// Kth Positive missing number
+
+// function kPos(arr,k) {
+
+// let n = arr.length;
+// let start = 0; let end  = n-1
+
+// while(start <= end){
+// let mid = Math.floor( start + (end-start) /2)
+// let miss = arr[mid] - (mid+1)
+// if(miss < k){
+//      start = mid+1
+// }else{
+//  end = mid -1  
+// }}
+
+// return start + k
+
+// }
+
+// let res = kPos([1,2,3,4],2)
+// console.log(res);
+
+
+/*
+you'll be given a increasing array where you need to find out the missing no. 
+
+[2,3,4,7,11], in this arr, first lets see what all elem is missing 
+1,2,3,4,5,6,7,8,9,10,11
+
+1
+5
+6
+8
+9
+10
+
+all of the above is missing in the arr
+9 is the 5th missing no. here so in ans we need to return 9 as Kth positive no.
+Another ex- [5,9,12,15] K = 4
+the first four numbers 1,2,3,4 ans itself is 4 as that is Kth missing no.
+arr[mid] - mid - 1 >= k) here we created our own array as , instarting it is 
+[2,3,4,7,11] mid goes at 4 , so 4-2-1=1, asking , what 4 is higher than or equal to 5 no, so start = mid+1
+7, 7-3-1 = 3>= 5 so 11-4-1= 6 , 6>= 5 yes so that is ans = mid, ans = 4 , as 11th index is 4 
+now ans + k = 4+5 = 9   
+
 
