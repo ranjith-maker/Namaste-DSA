@@ -693,3 +693,28 @@ arr[mid] - mid - 1 >= k) here we created our own array as , instarting it is
 now ans + k = 4+5 = 9   
 
 
+// function findKPairs(arr, k) {
+
+// let map = new Map()
+
+// for(let num of arr){
+// map.set(num , (map.get(num)|| 0) + 1 )
+// }
+
+// let count = 0;
+
+// for(let [num,freq] of map ){
+
+// if( k === 0 ){
+//     if( freq > 1) count++
+// }else{
+//    if( map.has(num + k)  ) count++
+// }}
+// return count
+// }
+
+// let res = findKPairs([3,1,4,1,5],2)
+// console.log(res);
+
+// Set = “keep only one copy of each value”
+// Map = “one key → one latest value”
