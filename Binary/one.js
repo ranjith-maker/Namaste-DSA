@@ -147,6 +147,40 @@
 
 
 
+// function rotTimes(arr) {
+
+// let n = arr.length;
+// let start = 0; let end = n-1;
+// let ans = Infinity
+// let idx = -1
+// while( start <= end ){
+
+// let mid = Math.floor(start + (end - start) /2)
+ 
+// if(arr[start]  <= arr[mid] ){
+// if(arr[start] < ans){
+//   idx = start
+//   ans = arr[start]
+
+// }
+// start = mid + 1
+
+// }else {  
+
+//   if(arr[mid ] < ans ){
+//     idx = mid
+//     ans = arr[mid]
+
+//   }
+//       end = mid-1
+// }}
+// return idx
+// }
+
+// let res = rotTimes([3,4,5,1,2])
+// console.log(res); 3
+// Number of rotations = index of the minimum element, so if we understand the rotate find mini this mini is how many times rotated is easy
+
 
 
 
