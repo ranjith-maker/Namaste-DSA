@@ -183,4 +183,114 @@
 
 
 
+// function lasWd(str) {
 
+//     let n = str.length - 1
+
+//     while( n>=0 ){
+
+//         if( str[n] !== " " ) break;
+//        --n
+//     }
+
+//     let count = 0;
+
+//     while( n >= 0 ){
+//         //as soon as you find the gap break it
+//     if(str[n] === " ") break
+//      --n;
+//      ++count;
+// }
+// return count
+// }
+
+// let res = lasWd("fly     me to the    moon                ")
+// console.log(res); //4
+
+// since I need to find the last word, we start from the last, 
+// when last has so many spaces, what we can do is , we can ignore the spaces
+// as soon as we find the word, we start counting until the spaces comes ,
+// it means before m.
+
+//         if( str[n] !== " " ) break;
+//  I wanna run as long as I find the word, so checking as break the loop as soon as you dont find the gap else run backward to find the word as you're in the " " gap 
+
+//         //as soon as you find the gap break it
+//     if(str[n] === " ") break
+
+// we did this approach with 1 loop in second approach
+
+// function lasWd(str) {
+
+// let n = str.length - 1
+// let count = 0;
+
+// while( n >= 0 ){
+
+// if( str[n] !== " "   ){
+//     count++
+// }else if(count > 0){
+//     break
+// }
+// n--
+// }return count
+// }
+// let res = lasWd("fly     me to the    moon                ")
+// console.log(res); //4
+
+// O(1) space means the amount of extra memory does not grow with input size.	
+
+// Jewels and Stones
+//Brute force
+// function JwelSton(jwels, stone) {
+    
+// let count = 0;
+
+// for( let i=0; i<stone.length; i++ ){
+
+// for(let j=0; j<jwels.length; j++){
+
+//  if( jwels[j] === stone[i] ){
+//     count++
+//     break
+//  }}}
+// return count
+// }
+
+
+// let res = JwelSton("aA" , "aaAbbbbbb" )
+// console.log(res); //3
+
+// Optimised Approach
+// function JwelSton(jwels, stone) {
+
+// let jSet = new Set()
+
+// for(let i=0; i<jwels.length; i++){
+
+//      jSet.add(jwels[i])
+//     }
+
+//     let count = 0;
+// for(let j=0; j<stone.length; j++){
+
+// if(jSet.has(stone[j]))
+//     count++
+
+// }
+
+// return count
+// }
+
+
+// let res = JwelSton("aA" , "aaAbbbbbb" )
+// console.log(res); //3
+
+
+// 3)Find most frequent vowels and consonant
+
+// You are given a string s consisting of lowercase English letters ('a' to 'z').
+
+// Your task is to:
+
+// here if we see it clearly, successes has = vowels--> 1u, 2e,  consonant ---> s-4c--->2 so taking only max of both and adding , 2vow 4cons = total 6
