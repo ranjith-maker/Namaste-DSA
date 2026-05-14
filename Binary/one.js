@@ -294,3 +294,85 @@
 // Your task is to:
 
 // here if we see it clearly, successes has = vowels--> 1u, 2e,  consonant ---> s-4c--->2 so taking only max of both and adding , 2vow 4cons = total 6
+
+
+
+// Split a String in a balanced string 
+
+
+// function Twins(str) {
+    
+
+// let R = 0; let L = 0;
+// let count = 0;
+
+// for(let i=0; i<str.length; i++){
+
+// if( str[i] === "R" ){
+//     R++
+// }else{
+//     L++
+// }
+
+// if( R === L ){
+//     count++
+//     R = L = 0
+// }}
+// return count
+
+// }
+
+// let res = Twins("RLRRLLRLRL")
+// console.log(res); //4
+
+
+
+// function Twins(str) {
+    
+// let temp = 0;
+// let count = 0;
+
+// for(let i=0; i<str.length; i++){
+
+// if( str[i] === "R" ){
+//     temp++
+// }else{
+//     temp--
+// }
+// if(temp === 0){
+//     count++
+// }}
+
+// return count
+
+// }
+
+// let res = Twins("RLRRLLRLRL")
+// console.log(res); //4
+
+
+
+
+
+// function reverseII(str,k) {
+
+//     let st = str.split("")
+
+// for(let x=0; x<st.length; x= x+(2*k) ) {   
+//     let n = k
+//     let mid = Math.floor(n/2)
+// for(let i=0; i<mid; i++ ){
+
+// let temp = st[x+i]
+// st[x+i] = st[x+n-i-1]
+// st[x+n-i-1]  = temp 
+
+
+// }}
+
+// return st.join()
+
+// }
+// let res = reverseII("abcdefghiklm", 3)
+// console.log(res)
+
