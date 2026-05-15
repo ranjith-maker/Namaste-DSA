@@ -376,3 +376,83 @@
 // let res = reverseII("abcdefghiklm", 3)
 // console.log(res)
 
+// Valid Palindrome Approach 1 (extra space)
+
+// function isPalindrome(str) {
+
+//   let s = str.toLowerCase()
+
+//   let filtered = ""
+//   let rev = ""
+
+//   for(let i = 0; i < s; i++ ){
+ 
+//     if( s[i].match([/a-z0-9/i])  ) {
+
+//          filtered += s[i] 
+//          rev = s[i] + rev
+        
+// }}
+// return filtered === rev
+// }
+
+// let res = isPalindrome("Race CAR ")
+// console.log(res); true
+
+
+// fitler will add--  r a c e 
+// rev is   ecar
+
+// while(start <= end)
+// → "Keep searching while range is valid."
+// while(start < end)
+// → "Keep shrinking until only one candidate remains."
+
+
+// function isPalindrome(str) {
+
+//   let n = str.length;
+//   let i = 0;
+//   let j = n-1;
+
+//   while(i < j){
+
+// if(! str[i].match(/[a-z0-9]/i) ){
+//   i++
+// }else if(! str[j].match(/[a-z0-9]/i) ){
+// j--
+// }else if(str[i].toLowerCase() !== str[j].toLowerCase()){
+//   return false
+// }
+// i++
+// j--
+// }
+// return true
+// }
+// let res = isPalindrome("Race CAR ")
+// console.log(res); true
+// 3 - Longest Odd no. in a string
+// Substring means part of string , here they asked largest ODD sub string, 
+// so if question is 2510004 I'll cutting from the last as long as 251,
+//  because when the last digit is odd, it is a odd as well as it is the 
+// largest also  and whole string can also be considered as sub string depending on the condition, for ex - 2500007 it is also a valid largest odd sub string
+// tell me what is the largest odd sub string here ? 252680 , nothing so return ""
+
+// function LarSubstr(s) {
+
+// let n = s.length - 1
+
+// while(n >= 0){
+// if( s[n] % 2 === 1 ){
+
+// return s.slice(0, n+1)
+
+// }
+//   n--
+// }
+// return ""
+// }
+
+// let res = LarSubstr("450236")
+// console.log(res); 45023
+//   here our JS automatically ocnverrts it into a number even though string is a input 
