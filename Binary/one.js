@@ -456,3 +456,67 @@
 // let res = LarSubstr("450236")
 // console.log(res); 45023
 //   here our JS automatically ocnverrts it into a number even though string is a input 
+
+
+// Isomorphic Strings
+// paper - titlte yes, why p->t, a->i, e->l e->r , title, here if p is mapped with t
+//  it should  be mapped with p only not with any other, only same characters
+//  egg-add yes, e->a , gg->dd ,add, same char, g to d again g to d only not another 
+// foo bar NO why, f->b oo->ar no either aa or rr to get the isomorphic string
+// For ans we can ASCII values, charCodeAt(i) a b c h p t all have same ASCII values, if two  strings have diff ascii val then it is false 
+// We compare the VALUES STORED inside arrays,
+// NOT the ASCII numbers themselves.ASCII values are only used to give each character its own storage box.
+// Simple Visual
+// Character    ASCII    Stored Value
+// ----------------------------------
+// 'p'          112      1
+// 't'          116      1
+
+// We compare:
+// 1 == 1
+// NOT:
+// 112 == 116,           That’s the trick.
+
+// function Isomorphic(s,t) {
+  
+
+// let indexS = Array(200).fill(0)
+// let indexT = Array(200).fill(0)
+
+// for(let i=0; i<s.length; i++){
+
+//   if(indexS[s.charCodeAt(i)]  !== indexT[t.charCodeAt(i)] ){   
+//     return false
+//     console.log(indexS[s.charCodeAt(i)]  !== indexT[t.charCodeAt(i)]);
+    
+//   }
+// indexS[s.charCodeAt(i)] = i+1
+// indexT[t.charCodeAt(i)] = i+1
+// }
+// return true
+// }
+
+// let res = Isomorphic("paper", "title" )
+// console.log(res); true 
+
+
+
+
+// Initially every position already contains 0 because of:
+
+// Array(200).fill(0)
+
+// So all boxes start like this:
+
+// indexS[0] = 0
+// indexS[1] = 0
+// ...
+// indexS[112] = 0
+// ...
+
+// Then this line:
+
+// indexS[s.charCodeAt(i)] = i + 1
+
+// goes to the ASCII position and UPDATES that position marks 0 1 
+
