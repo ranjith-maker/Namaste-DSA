@@ -520,3 +520,96 @@
 
 // goes to the ASCII position and UPDATES that position marks 0 1 
 
+
+
+// function palsubs(str) {
+    
+// let count = 0;
+
+// function expand(start,end) {
+
+//     while(start >=0 && end <= str.length && str[start] === str[end] ){
+    
+//     count++
+//     start--
+//     end++
+
+// }
+// return count
+// }
+
+// for(let i=0; i<str.length; i++){
+
+//     expand( i,i  ) 
+//     expand(i,i+1)
+// }
+
+// return count
+// }
+
+// let res = palsubs("noon")
+// console.log(res); 6
+
+// n o o n - 4
+// oo - 1
+// noon - 1
+// so 6
+
+// ---------
+
+//         while (
+//             start >= 0 &&
+//             end < s.length &&
+//             s[start] === s[end]
+//         ) {
+//             console.log(
+//                 `Palindrome: ${s.slice(start, end + 1)}`
+//             );
+
+//             count++;
+
+//             start--;
+//             end++;
+//         }
+//     }
+
+// so for odd length it starts from 0th index and sees same so count++ ok
+// here we do start-- only right 
+// second iteration for odd is start-- now it comes out of boundary, 
+// now it is starting to check even or how also 
+// once it comes out of boundary for odd it should only check even right  as per condition ? or how
+
+
+// so it means odd always fails after first iteraiton for any test case right ?
+// since we start from 0hth index and second iteration fails as it goes out of bound
+
+// Yes, we absolutely start at i = 0!
+// To show you exactly how the sequential "odd then even" process plays out from the very beginning, let's trace exactly what happens on the very first turn of the loop (i = 0) for the string "noon".
+// Step-by-Step for i = 0
+// When the program starts, i is set to 0. It executes the two lines of code inside the loop one after the other:
+// 1. First: The Odd Check expand(0, 0)
+// JavaScript enters the expand function with start = 0 and end = 0.
+// •	Iteration 1: It checks if s[0] === s[0] ('n' === 'n'). It matches! Count increases to 1.
+// •	Pointers move: start becomes -1, end becomes 1.
+// •	Iteration 2: It checks the condition start >= 0. Since -1 >= 0 is false, this while loop terminates.
+// •	The Odd Check is now completely finished.
+// 2. Next: The Even Check expand(0, 1)
+// Because the odd check is finished, JavaScript moves directly to the next line of code for that same index i = 0. It calls expand(0, 1).
+// •	Iteration 1: It checks if s[0] === s[1] ('n' === 'o').
+// •	This is a mismatch, so the while loop condition fails immediately.
+// •	The Even Check is now completely finished.
+// What happens next?
+// Only after both of those functions have completely finished running for i = 0, the for loop updates:
+// •	i increments to 1.
+// •	The whole process repeats: it runs the odd check expand(1, 1), finishes it, and then runs the even check expand(1, 2).
+// This is why starting at i = 0 doesn't break anything. The computer just patiently checks the odd center at 0, then checks the even center at 0 and 1, and only then moves its eyes to the next position in the string.
+
+
+
+
+
+
+
+
+
+
