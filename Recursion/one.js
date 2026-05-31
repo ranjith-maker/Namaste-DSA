@@ -60,4 +60,96 @@ function sum(n) {
 }
 sum(5)
 
+
+
+
+Sum of all elements in the array
+
+/*
+function sum(n) {
+
+if( n === 0 ) return arr[0]
+
+return arr[n] + sum(n-1) 
+
+}
+
+let arr = [5,3,2,0,1]
+
+console.log(sum(arr.length - 1)); //11
+
+
+
+Sum of all odd no. in the array
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+
+function sum(n) {
+    //sum's nature case
+  let odd = arr[n] % 2 === 1;
+
+  // Base case
+  if (n === 0) {
+    return odd ? arr[n] : 0;
+  }
+
+  // Recursive case
+  return (odd ? arr[n] : 0) + sum(n - 1);
+ 
+}
+
+console.log(sum(arr.length - 1)); 16
+
+
+function sum(n) {
+  if (n < 0) return 0;
+
+  return (arr[n] % 2 ? arr[n] : 0) + sum(n - 1);
+}
+
+console.log(sum(arr.length - 1)) 16
+
+
+
+*/
+
+//Mostly we start recursion from last no. so that we can start in the 0 or first elem as index of 0
+
+
+/*Factorial using Recursion , ! this excalmation mark denotes factorial
+
+
+function fac(n) {
+  
+if(n === 1 ) return 1
+
+return n * fac(n-1)
+
+}
+
+console.log(fac(5)); //120
+
+
+Power of 2
+
+function powOfTwo(n) {
+  
+if(n === 1) return true
+if((n%2 ===1) ||( n < 1) ) return false
+
+return powOfTwo(n/2)
+}
+
+
+
+console.log(powOfTwo(8));
+
+Every power of 2 eventually becomes 1 when divided by 2 repeatedly:
+
+8 → 4 → 2 → 1
+16 → 8 → 4 → 2 → 1
+Part 1: n % 2 === 1
+
+This means n is odd.
+Part 2: n < 1 ====> Powers of 2 are positive numbers:
 */
