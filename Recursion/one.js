@@ -152,4 +152,65 @@ Part 1: n % 2 === 1
 
 This means n is odd.
 Part 2: n < 1 ====> Powers of 2 are positive numbers:
+
+
+
+Climbing Stairs
+function climb(n) {
+  
+if( n === 0 || n===1) return 1
+
+  return climb(n-1) + climb(n-2)
+}
+
+console.log(climb(5)); //8 
+
+
+
+
+Print array
+let arr = [10,20,30,40,50,60]
+let i = 0
+
+function fun(nums,i) {
+  
+  if(i >= nums.length - 1) return nums
+
+  return nums = fun(nums, i+1)
+
+}
+
+console.log(fun(arr,i) ) [ 10, 20, 30, 40, 50, 60 ]
+
+here what we're telling is first i is 0 right .. so we consider it as index not as applying jus considering to make it work
+how we access last elem of an array ? arr.length -1
+so the base case will be if it reaches the last case it'll stop right 
+that’s why   if(i >= nums.length - 1) return nums
+when I is higher or equal to the last elem index no. stop
+from the first we increase it,   return nums = fun(nums, i+1)
+when it reaches the last elem it returns the whole num
+
+
+
+let arr = [10,20,30,40,50,60]
+let i = 0
+
+function fun(nums,i) {
+  
+  if(i >= nums.length - 1) return nums[i]
+
+  console.log(nums[i])
+  return nums = fun(nums, i+1)
+}
+console.log(fun(arr,i) ) 10 20 30 40 50 60
+here we print one by one like recursive
+
+
+
+
+
+
+
+
+
 */
