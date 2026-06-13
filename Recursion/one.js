@@ -209,6 +209,67 @@ here we print one by one like recursive
 
 
 
+Given a array of distinct integers, Target is 5, 
+You have to tell the minimum no. of elements (sum together)
+required to reach target sum
+It means, lets say the array has [12111122223333] 
+An array can have infinite elements
+We can do like , (1+1+1+1+1) to get 5
+We can do 1+1+1+2 = 5
+1+1+3= 5
+2+3=5 
+We can take the last pair as 2+3=5 as the question says minimum no. of elem sum together is needed to reach target
+
+
+
+If target is 3 arr = [1,2]
+Possible elems are either 
+1,1,1 or
+1,2
+- in this both case minimum no. is 1,2  as this reaches the target ans will be 2 
+
+
+This is the classic Minimum Coins / Coin Change problem.
+•	You have an array of distinct integers (coins). 
+•	You can use each number unlimited times. 
+•	Find the minimum number of elements needed to make the target sum.
+
+let arr = [1,2,3]
+let target = 5
+
+function fun(arr,target,sum = 0) {
+  
+if( sum === target )return 0
+if( sum > target ) return Infinity
+
+let ans = Infinity
+for(let i =0; i<arr.length; i++){
+
+ans = Math.min( ans, 1 + fun(arr,target, sum - arr[i] ) )
+}
+return ans}
+console.log(fun(arr,target)) // 2
+
+Maximum segments 
+function maxSegments(n, a, b, c) {
+    if (n === 0) return 0;
+    if (n < 0) return -Infinity;
+
+    let res = Math.max(
+        maxSegments(n - a, a, b, c),
+        maxSegments(n - b, a, b, c),
+        maxSegments(n - c, a, b, c)
+    );
+
+    if (res === -Infinity) return -Infinity;
+
+    return res + 1;
+}
+
+let ans = maxSegments(5, 1, 2, 3);
+console.log(ans); 5
+5 cuts we can make since 1 1 1 1 1 into pieces 
+
 
 
 
